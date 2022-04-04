@@ -1,3 +1,5 @@
+hystrix.command.fallbackcmd.execution.isolation.thread.timeoutInMilliseconds: 2000
+
 server:
   port: 9090
 spring:
@@ -18,8 +20,12 @@ spring:
           uri: lb://service1
           predicates:
             - Path=/api/**
-          filters:
+          default-filters:
             - RewritePath=/(?<path>.*), /$\{path}
+            - name: Hystrix
+              args:
+                name: hystrixFx
+                fallbackUri: forward:/api/fallback
 
 management:
   endpoint:

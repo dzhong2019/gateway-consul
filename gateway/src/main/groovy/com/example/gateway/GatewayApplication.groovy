@@ -9,5 +9,4 @@ class GatewayApplication {
 	static void main(String[] args) {
 		SpringApplication.run(GatewayApplication, args)
 	}
-
 }

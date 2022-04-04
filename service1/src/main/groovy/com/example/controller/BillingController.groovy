@@ -1,5 +1,6 @@
 package com.example.controller
 
+import com.example.Service2CircuitBreaker
 import com.example.Service2Client
 import com.example.domain.Book
 import io.micronaut.http.annotation.Controller
